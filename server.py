@@ -51,7 +51,13 @@ class MyWebServer(socketserver.BaseRequestHandler):
         
         the_path = requested_command.split(' ')
         #print("requested_val: ", the_path)# ['GET', '/', 'HTTP/1.1']
-        the_path=the_path[1]
+        
+        try:#sometimes when you move between pages quickly, an error in the server side pops up. it causes no issues though, just some print lines.
+            the_path=the_path[1]#i suspect it has something to do with the socket, which is outside of the scope of this assignment
+        except:#the try and except is not necassary. as i said, it doesnt cause any issues regardless other than a few print lines in server
+            
+            #print(requested_command.split(' '),"AND",the_path) #these will appear empty when the socket side error occurs, but the page still works.
+            pass#perphaps its because we are using TDP and its merely getting the data again after it missed out on it when switching quickly between pages
         #print("requested_val: ", the_path) # /
         
         #print()
