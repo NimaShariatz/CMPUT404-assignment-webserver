@@ -156,7 +156,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
             return True
 
     def send_404(self, the_path, status_code):
-        if os.path.exists(the_path) and ((".html" in the_path) or (".css" in the_path)):
+        if os.path.exists(the_path) and ((".html" in the_path) or (".css" in the_path)) and (".." in os.path.realpath):
             return True
         else:
             self.request.sendall(status_code.encode())
