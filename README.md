@@ -1,6 +1,14 @@
 CMPUT404-assignment-webserver
 =============================
 
+collaboration:
+Assistance was given by Aidan Lynch, specifically regarding how to send data to the client as a server
+(i.e the line self.request.sendall(variable.encode)) along with an example of how the printing format looks like for the client
+(the header and HTML printout on the client terminal)
+
+past that, no further collaboration was made. No external sources of code were used.
+
+
 CMPUT404-assignment-webserver
 
 See requirements.org (plain-text) for a description of the project.
